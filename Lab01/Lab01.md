@@ -210,9 +210,9 @@ Aby stworzyć wykres, musimy przygotować kilka plików konfiguracyjnych:
 
 1.  [Kariotyp](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) - plik, w którym określamy podstawowe informacje dotyczące segmentów (chromosomów), które chcemy zwizualizować. Format:
 
-|**chr** |**-** |**ID (w danych)** |**etykieta** |**początek** |**koniec** |**kolor** |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|chr |- |1 |chromosome1 |0 |580076 | purple |
+| **chr** | **-** | **ID (w danych)** | **etykieta** | **początek** | **koniec** | **kolor** |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| chr | - | 1 | chromosome1 | 0 | 580076 | purple |
 
 
 2.  [Główny plik konfiguracyjny](http://circos.ca/documentation/tutorials/quick_start/hello_world/) - plik, w którym definiujemy elementy grafiki, oraz ich parametry. W głównym pliku konfiguracyjnym określamy lokalizację pliku z kariotypem:
@@ -268,69 +268,18 @@ Linie łączące elementy wykresu:
 5.  Dodatkowe pliki konfiguracyjne - możemy definiować w nich te same elementy, co w głównym pliku konfiguracyjnym. Uwzględniamy je w głównym pliku linijką <<include name.conf>>.
     
 6.  Pliki z danymi do wykresów w formacie:
-    
 
-chr
-
-start
-
-stop
-
-wartość
-
-kolor
-
-0
-
-0
-
-100
-
-1.629407336396254
-
-fill\_color=red
-
-0
-
-100
-
-200
-
-1.5523160283080437
-
-fill\_color=red
+| **chr** | **start** | **stop** | **wartość** | **kolor** |
+| :---: | :---: | :---: | :---: | :---: |
+| 0 | 0 | 100 | 1.629407336396254 | fill_color=red |
+| 0 | 100 | 200 | 1.5523160283080437 | fill_color=red |
 
 7.  Pliki z danymi do połączeń w formacie:
 
-id
-
-chrom
-
-start
-
-stop
-
-kolor
-
-01
-
-0
-
-169475
-
-169522
-
-color=blue
-
-01
-
-0
-
-224535
-
-224555
-
-color=blue
+| **id** | **chrom** | **start** | **stop** | **kolor** |
+| :---: | :---: | :---: | :---: | :---: |
+| 01 | 0 | 169475 | 169522 | color=blue |
+| 01 | 0 | 224535 | 224555 | color=blue |
 
 Wykres tworzymy poleceniem:
 
