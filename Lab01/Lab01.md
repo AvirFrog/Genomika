@@ -224,54 +224,58 @@ Aby stworzyć wykres, musimy przygotować kilka plików konfiguracyjnych:
 
 
 2.  [Główny plik konfiguracyjny](http://circos.ca/documentation/tutorials/quick_start/hello_world/) - plik, w którym definiujemy elementy grafiki, oraz ich parametry. W głównym pliku konfiguracyjnym określamy lokalizację pliku z kariotypem:
-
-> karyotype = karyo.conf
-
+```html
+    karyotype = karyo.conf
+```
 4.  Elementami, które możemy uwzględnić na wykresie są [m.in](http://m.in).:
 
 Ideogramy, czyli segmenty “chromosomów”:
 
-> <ideogram>
-> 
-> <spacing> default = 0.005r </spacing>
-> 
-> radius = 0.90r  
-> thickness = 20p  
-> fill = yes
-> 
-> #stroke\_thickness = 1  
-> #stroke\_color = black
-> 
-> </ideogram>
+```html
+    <ideogram>
+        <spacing> default = 0.005r </spacing>
+      
+        radius = 0.90r  
+        thickness = 20p  
+        fill = yes
+      
+        #stroke\_thickness = 1  
+        #stroke\_color = black
+    </ideogram>
+```
 
 Oznaczenia osi (ticks):
 
-> <tick> spacing = 10000 u  
-> color = grey  
-> size = 10p  
-> </tick>
+```html
+    <tick> spacing = 10000 u  
+        color = grey  
+        size = 10p  
+    </tick>
+```
 
 Wykresy prezentujące dane liczbowe:
 
-> <plot>
-> 
-> type = histogram  
-> file = gc\_content.histo  
-> thickness = 0p
-> 
-> </plot>
+```html
+    <plot>
+        type = histogram  
+        file = gc\_content.histo  
+        thickness = 0p
+    </plot>
+```
 
 Linie łączące elementy wykresu:
 
-> <links>  
-> <link> radius = 0.8r  
-> bezier\_radius = 0r  
-> bezier\_radius\_purity = 0.9  
-> color = black  
-> thickness = 2  
-> file = max\_kmer.links  
-> </link>  
-> </links>
+```html
+    <links>  
+        <link> radius = 0.8r  
+        bezier\_radius = 0r  
+        bezier\_radius\_purity = 0.9  
+        color = black  
+        thickness = 2  
+        file = max\_kmer.links  
+        </link>  
+    </links>
+```
 
 5.  Dodatkowe pliki konfiguracyjne - możemy definiować w nich te same elementy, co w głównym pliku konfiguracyjnym. Uwzględniamy je w głównym pliku linijką <<include name.conf>>.
     
