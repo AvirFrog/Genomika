@@ -16,29 +16,37 @@ W tym ćwiczeniu scharakteryzujemy genomy korzystając z naiwnych, nie odnosząc
 W trakcie ćwiczeń korzystać będziemy z systemu zarzadzania pakietami [Conda](https://conda.io). Sugeruję stworzyć jedno środowisko, do którego będziemy wracać w kolejnych ćwiczeniach. Niektóre programy będą wymagały stworzenia osobnego środowiska, ze wzgldu na niekompatybilność wersji wymaganych pakietów.
 
 Instalacja Condy:
-
+```bash
     wget  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod -x ./Miniconda3-latest-Linux-x86_64.sh  
-    ./Miniconda3-latest-Linux-x86_64.sh  
-    /home/student/miniconda3/bin/conda init
-    source ~/.bashrc
-    conda config --add channels bioconda  
-    conda config --add channels conda-forge
-    conda install mamba
     
+    chmod -x ./Miniconda3-latest-Linux-x86_64.sh
+    
+    ./Miniconda3-latest-Linux-x86_64.sh
+    
+    /home/student/miniconda3/bin/conda init
+    
+    source ~/.bashrc
+    
+    conda config --add channels bioconda 
+    
+    conda config --add channels conda-forge
+    
+    conda install mamba
+ ```   
 
 Stwórz środowisko w conda:
-
+```bash
     conda create -n genomika22 -c bioconda
     conda activate genomika22
     conda install python=3
+```
     
 
 Utwórz katalog roboczy
-
+```bash
     mkdir genome_statistics
     cd genome_statistics
-    
+```
 
 ### Probabilistyczne modele sekwencji genomowych
 
@@ -49,7 +57,7 @@ W tym ćwiczeniu, podobnie jak w części kolejnych zajęć opierać będziemy s
 Najprostszy model sekwencji zakłada niezależność pozycji i równomierne rozmieszczenie znaków. Sekwencja powstaje w wyniku procesu stochastycznego w którym znaki są kolejno losowane z alfabetu {A,C,T,G}. Prawdopodobieństwo wylosowania poszczególnych znaków może, lecz nie musi być jednostajne. Modele wielomianowe często traktowane są jako model zerowy, odstępstwa od którego mogą wskazywać na pewne interesujące regiony genomu.
 
 **Zadanie 1.** Wygeneruj losową sekwencję nukleotydów o długości 1000 bp przy założeniu jednorodnego (jednostajnego) rozkładu nukleotydów. Wynik zapisz w formacie fasta.
-
+```python
     import random
     nucleotides = ['A', 'T', 'C', 'G']
     length = 1000
@@ -60,7 +68,7 @@ Najprostszy model sekwencji zakłada niezależność pozycji i równomierne rozm
     
     seq = random_seq(nucleotides, length)
     print(seq)
-    
+```    
 
 **Zadanie 2.** Wygeneruj losową sekwencję nukleotydów o długości 1000 bp zakładając niejednorodny, arbitralny rozkład nukleotydów p(A) = 0.1, p(C) = 0.3, p(T) = 0.2. Wynik zapisz w formacie fasta.
 
