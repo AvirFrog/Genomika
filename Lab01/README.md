@@ -1,5 +1,3 @@
-  1\. Genome\_characteristics 
-
 Genom - sekwencja nukleotydów
 =============================
 
