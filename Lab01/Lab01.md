@@ -71,19 +71,19 @@ Najprostszy model sekwencji zakłada niezależność pozycji i równomierne rozm
 ```    
 
 **Zadanie 2.** Wygeneruj losową sekwencję nukleotydów o długości 1000 bp zakładając niejednorodny, arbitralny rozkład nukleotydów p(A) = 0.1, p(C) = 0.3, p(T) = 0.2. Wynik zapisz w formacie fasta.
-
+```python
     weights = [0.1, ...]
-    
+```    
 
 albo:
-
+```python
     nucleotides = {'A': 0.1, ......}
-    
+```    
 
 na przykład:
-
+```python
     random.choices(list, weights, k)
-    
+```    
 
 #### Modele Markova jako modele generatywne.
 
