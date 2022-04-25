@@ -165,9 +165,12 @@ Profil k-merów przedstawia zliczenia wszystkich podsłów o długości k danej 
 
 **Zadanie 8.** Dla sekwencji 1, 2 i 3 oblicz obserwowane częstości 2-merów oraz określ teoretyczne prawdopodobieństwo ich wystąpienia przy założeniu modelu wielomianowego. Oblicz iloraz szans i logarytm ilorazu szans. Opisz otrzymany wynik.
 
+
 ![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\P(s)=P(s_{1}s_{2}...s_{n}))
 
-![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\or = \frac{N(xy)}{N(x)N(y)})
+![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\or=\frac{N(xy)}{N(x)N(y)})
+
+
 
 Powszechnie wykorzystywanym programem do analizy k-merów jest [jellyfish](https://github.com/gmarcais/Jellyfish)
 ```bash
