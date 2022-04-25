@@ -210,33 +210,10 @@ Aby stworzyć wykres, musimy przygotować kilka plików konfiguracyjnych:
 
 1.  [Kariotyp](http://circos.ca/documentation/tutorials/ideograms/karyotypes/) - plik, w którym określamy podstawowe informacje dotyczące segmentów (chromosomów), które chcemy zwizualizować. Format:
 
-chr
+|**chr** |**-** |**ID (w danych)** |**etykieta** |**początek** |**koniec** |**kolor** |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|chr |- |1 |chromosome1 |0 |580076 | purple |
 
-\-
-
-ID (w danych)
-
-etykieta
-
-początek
-
-koniec
-
-kolor
-
-chr
-
-\-
-
-1
-
-chromosome1
-
-0
-
-580076
-
-purple
 
 2.  [Główny plik konfiguracyjny](http://circos.ca/documentation/tutorials/quick_start/hello_world/) - plik, w którym definiujemy elementy grafiki, oraz ich parametry. W głównym pliku konfiguracyjnym określamy lokalizację pliku z kariotypem:
 
