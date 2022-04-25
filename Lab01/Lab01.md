@@ -121,8 +121,9 @@ W tej części scharakteryzujemy nasze"genomy" korzystając z kilku miar kompozy
 1.  Relatywny udział poszczególnych nukleotydów
 2.  Zawartość GC (GC content)
 3.  Asymetrię GC i AT (GC / AT skew) - stosunek G do C (A do T) na danej nici DNA
-4.  Entropia Shannona (miara nieuporządkowania sekwencji, czyli zawartości informacji)  
-    H(X)\=−∑i\=1nP(xi)logP(xi)H(X) = -\\sum^n\_{i=1}P(x\_i)logP(x\_i)H(X)\=−i\=1∑n​P(xi​)logP(xi​)
+4.  Entropia Shannona (miara nieuporządkowania sekwencji, czyli zawartości informacji)
+
+    ![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\H(X)=i\sum_{i=1}^{n}P(x_{i})logP(x_{i}))
 5.  Złożoność Lempel’a-Ziv’a - jest to liczba unikalnych podsłów (podsekwencji) spotykanych podczas czytania sekwencji od lewej do prawej. Może być wykrzystana jako miara powtarzalności sekwencji. Przykładowo: sekwencję ACTGTGATCCTGACTGA rozłożymy do A|C|T|G|TGA|TC|CTGA
 
 Obliczenia dotyczące kompozycji sekwencji możemy wykonać na przykład za pomocą zbioru narzędzi [seqkit](https://bioinf.shenwei.me/seqkit/)
@@ -164,8 +165,9 @@ Profil k-merów przedstawia zliczenia wszystkich podsłów o długości k danej 
 
 **Zadanie 8.** Dla sekwencji 1, 2 i 3 oblicz obserwowane częstości 2-merów oraz określ teoretyczne prawdopodobieństwo ich wystąpienia przy założeniu modelu wielomianowego. Oblicz iloraz szans i logarytm ilorazu szans. Opisz otrzymany wynik.
 
-P(s)\=P(s1s2...sn)P(s) = P(s\_1s\_2...s\_n)P(s)\=P(s1​s2​...sn​)  
-or\=N(xy)N(x)N(y)or = \\frac{N(xy)}{N(x)N(y)}or\=N(x)N(y)N(xy)​
+![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\P(s)=P(s_{1}s_{2}...s_{n}))
+
+![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\or = \frac{N(xy)}{N(x)N(y)})
 
 Powszechnie wykorzystywanym programem do analizy k-merów jest [jellyfish](https://github.com/gmarcais/Jellyfish)
 ```bash
