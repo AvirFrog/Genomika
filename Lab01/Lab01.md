@@ -77,7 +77,7 @@ Najprostszy model sekwencji zakłada niezależność pozycji i równomierne rozm
 
 albo:
 ```python
-    nucleotides = {'A': 0.1, ......}
+    nucleotides = {'A': 0.1, ...}
 ```    
 
 na przykład:
@@ -93,14 +93,14 @@ Najprostrzymi modelami Markova są łańcuchy Markova (Markov Chains), w przypad
 
 **Zadanie 3.** Wygeneruj losową sekwencję nukleotydów o długości 1000 bp zgodnie ze zilustrowanym na diagramie I-rzędowym procesem Markowa, zakładając jednorodny rozkład początkowy. Wynik zapisz w formacie fasta.  
 ![Image caption](https://i2.wp.com/1.bp.blogspot.com/-_v4xzlnHqWk/T4jy6aaBEhI/AAAAAAAAAo8/_L0D5t0VS7o/s400/first.png?resize=400%2C347)
-
+```python
     transition_matrix = {
     'A': {'A':0.6, 'C':0.1, 'T':0.2, 'G':0.1},
     'C': {'A':0.1, 'C':0.5, 'T':0.1, 'G':0.3},
     'T': {'A':0.4, 'C':0.05, 'T':0.5, 'G':0.05},
     'G': {'A':0.05, 'C':0.2, 'T':0.05, 'G':0.7}
     }
-    
+```    
 
 **Zadanie 4.** W jaki sposób należałoby zmodyfikować diagram, aby był równoważny z modelami z zadania 1 i 2?
 
@@ -126,37 +126,37 @@ W tej części scharakteryzujemy nasze"genomy" korzystając z kilku miar kompozy
 5.  Złożoność Lempel’a-Ziv’a - jest to liczba unikalnych podsłów (podsekwencji) spotykanych podczas czytania sekwencji od lewej do prawej. Może być wykrzystana jako miara powtarzalności sekwencji. Przykładowo: sekwencję ACTGTGATCCTGACTGA rozłożymy do A|C|T|G|TGA|TC|CTGA
 
 Obliczenia dotyczące kompozycji sekwencji możemy wykonać na przykład za pomocą zbioru narzędzi [seqkit](https://bioinf.shenwei.me/seqkit/)
-
+```bash
     conda install seqkit -c bioconda
-    
+```    
 
 Udział A:
-
+```bash
     seqkit fx2tab in.fa -n -B A
-    
+```    
 
 Zawartość GC:
-
+```bash
     seqkit fx2tab in.fa -n -B GC
     seqkit fx2tab in.fa -n -g
-    
+```    
 
 Asymetria GC:
-
+```bash
     seqkit fx2tab in.fa -n -g
-    
+```    
 
 **Zadanie 7.** Powtórz obliczenia z zadania 6 stosując okno 20 bp i krok 5 bp. Zwizualizuj wyniki na wykresie liniowym. Opisz otrzymany wynik.
-
+```bash
     conda install matplotlib pandas
-    
+```    
 
 GC w seqkit:
-
+```bash
     cat in.fa| \
     seqkit sliding -s 5 -W 20 | \
     seqkit fx2tab -n -g > gc_sliding
-    
+```    
 
 ### Profile k-merów oraz ocena ich losowości
 
@@ -168,34 +168,34 @@ P(s)\=P(s1s2...sn)P(s) = P(s\_1s\_2...s\_n)P(s)\=P(s1​s2​...sn​)
 or\=N(xy)N(x)N(y)or = \\frac{N(xy)}{N(x)N(y)}or\=N(x)N(y)N(xy)​
 
 Powszechnie wykorzystywanym programem do analizy k-merów jest [jellyfish](https://github.com/gmarcais/Jellyfish)
-
+```bash
     conda install jellyfish -c bioconda
-    
+```    
 
 2 mery:
-
+```bash
     jellyfish count -m 2 -s 100M -t 10 -C in.fa -o twomers.jf
-    
+```    
 
 Aby wyświetlić zawartość pliku:
-
+```bash
     jellyfish dump twomers.jf
-    
+```    
 
 Liczebność AA:
-
+```bash
     jellyfish query twomers.jf AA
-    
+```    
 
 Histogram (profil k-merów):
-
+```bash
     jellyfish histo twomers.jf
-    
+```    
 
 Statystyki:
-
+```bash
     jellyfish stats twomers.jf 
-    
+```    
 
 Jednym ze sposobów na sprawdzenie losowości zaobserowanego sygnału często stosowanym w analizie sekwencji są randomizacje i metody Monte Carlo. Najprostszym przykładem są permutacje, czyli losowanie bez zwracania. Z sekwencji o długości L losujemy, bez zwracania nową sekwencję o długości L, dla której obliczamy interesującą nas statystykę (np. częstość występowania określonego k-meru). Proces powtarzamy N razy. W ten sposób otrzymujemy rozkład prawdopodobieństwa krotności zaobserwowania danego k-meru w losowej sekwencji o takich samych parametrach. Inną często stosowaną metodą jest bootstrap, w przypadku której losujemy ze zwracaniem (innymi słowy - losujemy z rozkładu wielomianowego z empirycznie określonymi częstościami występowania nukleotydów). W ten sposób możemy modelować populację, z której pochodzi nasza próba.
 
@@ -209,10 +209,10 @@ Często wykorzystywanym sposobem wizualizacji danych genomowych są wykresy opar
 _[http://circos.ca/intro/genomic\_data/](http://circos.ca/intro/genomic_data/)_
 
 **Zadanie 10.** Wizualizacja danych genomowych z pakietem Circos
-
+```bash
     conda install circos -c bioconda
     circos -conf config.conf
-    
+```    
 
 Aby stworzyć wykres, musimy przygotować kilka plików konfiguracyjnych:
 
@@ -290,9 +290,10 @@ Linie łączące elementy wykresu:
 | 01 | 0 | 224535 | 224555 | color=blue |
 
 Wykres tworzymy poleceniem:
-
+  
+```bash
     circos -conf circos_conf.conf
-    
+```    
 
 ### Zadanie domowe:
 
