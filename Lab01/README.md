@@ -121,7 +121,7 @@ W tej części scharakteryzujemy nasze"genomy" korzystając z kilku miar kompozy
 3.  Asymetrię GC i AT (GC / AT skew) - stosunek G do C (A do T) na danej nici DNA
 4.  Entropia Shannona (miara nieuporządkowania sekwencji, czyli zawartości informacji)
 
-    ![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\H(X)=i\sum_{i=1}^{n}P(x_{i})logP(x_{i}))
+    ![formula](https://render.githubusercontent.com/render/math?math=\color{white}\large\H(X)=-i\sum_{i=1}^{n}P(x_{i})logP(x_{i}))
 5.  Złożoność Lempel’a-Ziv’a - jest to liczba unikalnych podsłów (podsekwencji) spotykanych podczas czytania sekwencji od lewej do prawej. Może być wykrzystana jako miara powtarzalności sekwencji. Przykładowo: sekwencję ACTGTGATCCTGACTGA rozłożymy do A|C|T|G|TGA|TC|CTGA
 
 Obliczenia dotyczące kompozycji sekwencji możemy wykonać na przykład za pomocą zbioru narzędzi [seqkit](https://bioinf.shenwei.me/seqkit/)
