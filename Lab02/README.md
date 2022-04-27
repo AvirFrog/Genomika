@@ -1,5 +1,3 @@
- 2\. Sequence_alignment 
-
 Przyrównanie sekwencji
 ======================
 
