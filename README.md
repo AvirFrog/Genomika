@@ -6,7 +6,7 @@ Genomika
 | **LAB** | **TEMAT** | **DATA** | **LINK** |
 | :---: | :---: | :---: | :---: |
 | LAB01 | Genom - sekwencja nukleotydów | 20.04.22 | [LAB01](https://github.com/AvirFrog/Genomika/tree/main/Lab01) |
-| LAB02 |  | 27.04.22 | [LAB02](https://github.com/AvirFrog/Genomika/tree/main/Lab02) |
+| LAB02 | Przyrównanie sekwencji | 27.04.22 | [LAB02](https://github.com/AvirFrog/Genomika/tree/main/Lab02) |
 | LAB03 |  | 04.05.22 | [LAB03](https://github.com/AvirFrog/Genomika/tree/main/Lab03) |
 | LAB04 |  | 11.05.22 | [LAB04](https://github.com/AvirFrog/Genomika/tree/main/Lab04) |
 | LAB05 |  | 18.05.22 | [LAB05](https://github.com/AvirFrog/Genomika/tree/main/Lab05) |
